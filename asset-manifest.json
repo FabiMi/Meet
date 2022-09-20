@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/FabiMi/meet.git/static/css/main.073c9b0a.css",
+    "main.js": "/FabiMi/meet.git/static/js/main.0787c249.js",
+    "static/js/787.4b564826.chunk.js": "/FabiMi/meet.git/static/js/787.4b564826.chunk.js",
+    "service-worker.js": "/FabiMi/meet.git/service-worker.js",
+    "static/media/logo.svg": "/FabiMi/meet.git/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
+    "index.html": "/FabiMi/meet.git/index.html",
+    "main.073c9b0a.css.map": "/FabiMi/meet.git/static/css/main.073c9b0a.css.map",
+    "main.0787c249.js.map": "/FabiMi/meet.git/static/js/main.0787c249.js.map",
+    "787.4b564826.chunk.js.map": "/FabiMi/meet.git/static/js/787.4b564826.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.0787c249.js"
+  ]
+}
