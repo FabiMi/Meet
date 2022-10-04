@@ -1,11 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import EventList from './EventList';
+import CitySearch from './CitySearch';
+
+
 
 function App() {
   return (
     <div className="App">
-     
+       <EventList />
+       <CitySearch />
+
     </div>
   );
 }
