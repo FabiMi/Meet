@@ -12,6 +12,7 @@ class Event extends Component {
     return (
         <div className="event">
           <h1 className="event-summary-title">{event.summary}</h1>
+          <p className="event-info">{event.info}</p>
           </div>
          
          );
