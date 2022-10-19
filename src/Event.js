@@ -17,16 +17,6 @@ class Event extends Component {
           <div> 
              <p className="event-info"> {event.summary} {event.location} {event.dateTime} </p> 
           </div>
-
-         
-        
-          
-
-
-
-
-          
-
           </div>
          
          );
