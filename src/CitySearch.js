@@ -1,30 +1,42 @@
 import React, { Component } from 'react';
 
-export class NumberOfEvents extends Component {
-  handleInputChanged = (event) => {
-    this.props.updateEvents(undefined, event.target.value);
-    const value = event.target.value;
-    this.setState({ numOfEvents: value });
-  };
+class CitySearch extends Component {
+  state = {
+    query: '',
+    suggestions: []
+  }
 
+  handleInputChanged = (event) => {
+    const value = event.target.value;
+    this.setState({ showSuggestions: true });
+    const suggestions = this.props.locations.filter((location) => {
+      return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
+    });
+   
     
 
-  
-  state = { numOfEvents: 32 };
+    
+  };
   render() {
     return (
-      <div className="numberOfEvents">
-        <label>
-          Number of Events:
-          <input
-            type="number"
-            className="number-input"
-            value={this.state.numOfEvents}
-            onChange={this.handleInputChanged}
-          />
-        </label>
+      <div className="CitySearch">
+        <input
+          type="text"
+          className="city"
+          value={this.state.query}
+          onChange={this.handleInputChanged}
+        />
+        <ul className="suggestions">
+  {this.state.suggestions.map((suggestion) => (
+    <li key={suggestion}>{suggestion}</li>
+  ))}
+  <li key='all'>
+    <b>See all cities</b>
+  </li>
+</ul>
       </div>
     );
   }
 }
-export default NumberOfEvents;
+
+export default CitySearch;

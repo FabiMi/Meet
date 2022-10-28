@@ -13,8 +13,10 @@ class Event extends Component {
     return (
         <div className="event" >
           <h1 className="event-summary-title">{event.summary}</h1>
+          <button className="event-details-btn" onClick={this.toggleEventDetails}>details</button>
+          <div> 
              <p className="event-info"> {event.summary} {event.location} {event.dateTime} </p> 
-             <button className="event-details-btn" onClick={this.toggleEventDetails}>details</button>
+          </div>
           </div>
          
          );
