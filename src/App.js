@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import EventList from './EventList';
+import EventList from './Eventlist';
 import CitySearch from './CitySearch';
 
 

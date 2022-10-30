@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Event from '../Event';
-import EventList from '../EventList';
 import { mockData } from '../mock-data';
 
 describe("<Event /> component", () => {
@@ -29,19 +28,13 @@ describe("<Event /> component", () => {
       event.summary
   )});
 
-    test('render event info correctly', () =>  {
-        expect(EventWrapper.find('.event-info').text()).toContain (event.summary),(event.location), 
-        (event.dateTime);
-        });
-
-     test('event stays collapsed by default', () =>{
-         expect(EventWrapper.state('show')).toBe(false);
-
-     });   
-     test('render click to expand event details', () => {
-     EventWrapper.find('.event-details-btn').simulate('click');
+  test('render event info correctly', () =>  {
+    expect(EventWrapper.find('.event-info').text()).toContain (event.summary, event.location, event.dateTime);
+ test('event stays collapsed by default', () =>{
+     expect(EventWrapper.state('show')).toBe(false);
+ });
+ test('render click to expand event details', () => {
+    EventWrapper.find('.event-details-btn').simulate('click');
     expect(EventWrapper.state('show')).toBe(true);
-
   });
 });
-
