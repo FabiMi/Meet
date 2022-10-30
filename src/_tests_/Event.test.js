@@ -30,6 +30,7 @@ describe("<Event /> component", () => {
 
   test('render event info correctly', () =>  {
     expect(EventWrapper.find('.event-info').text()).toContain (event.summary, event.location, event.dateTime);
+  });
  test('event stays collapsed by default', () =>{
      expect(EventWrapper.state('show')).toBe(false);
  });
