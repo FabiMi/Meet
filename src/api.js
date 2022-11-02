@@ -1,5 +1,6 @@
 import { mockData } from './mock-data';
 import axios from 'axios';
+import NProgress from 'nprogress';
 
 
 
@@ -12,8 +13,28 @@ import axios from 'axios';
  * The Set will remove all duplicates from the array.
  */
 
+
+
+ const getToken = async (code) => {
+  try {
+      const encodeCode = encodeURIComponent(code);
+
+      const response = await fetch( 'https://v9z9nuueva.execute-api.eu-central-1.amazonaws.com/dev/api/token' + '/' + encodeCode);
+      if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+      }
+      const { access_token } = await response.json();
+      access_token && localStorage.setItem("access_token", access_token);
+      return access_token;
+  } catch(error) {
+      error.json();
+  }
+}
+
+
  export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
+
   const tokenCheck = accessToken && (await checkToken(accessToken));
 
   if (!accessToken || tokenCheck.error) {
@@ -22,7 +43,7 @@ import axios from 'axios';
     const code = await searchParams.get("code");
     if (!code) {
       const results = await axios.get(
-        "YOUR_SERVERLESS_GET_AUTH_URL_ENDPOINT"
+        "https://v9z9nuueva.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url"
       );
       const { authUrl } = results.data;
       return (window.location.href = authUrl);
@@ -58,12 +79,25 @@ import axios from 'axios';
       return mockData;
     }
   
+    const removeQuery = () => {
+      if (window.history.pushState && window.location.pathname) {
+        var newurl =
+          window.location.protocol +
+          "//" +
+          window.location.host +
+          window.location.pathname;
+        window.history.pushState("", "", newurl);
+      } else {
+        newurl = window.location.protocol + "//" + window.location.host;
+        window.history.pushState("", "", newurl);
+      }
+    };
   
     const token = await getAccessToken();
   
     if (token) {
       removeQuery();
-      const url = 'https://fabimi.github.io/meet/token';
+      const url = 'https://v9z9nuueva.execute-api.eu-central-1.amazonaws.com/dev/api/get-events'+ '/' + token;
       const result = await axios.get(url);
       if (result.data) {
         var locations = extractLocations(result.data.events);
@@ -73,5 +107,9 @@ import axios from 'axios';
       NProgress.done();
       return result.data.events;
     }
+
+   
+
+  
   };
   
