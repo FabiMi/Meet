@@ -91,13 +91,12 @@ import NProgress from 'nprogress';
         newurl = window.location.protocol + "//" + window.location.host;
         window.history.pushState("", "", newurl);
       }
-    };
-  
+    };  
     const token = await getAccessToken();
   
     if (token) {
       removeQuery();
-      const url = 'https://v9z9nuueva.execute-api.eu-central-1.amazonaws.com/dev/api/get-events'+ '/' + token;
+      const url = 'https://v9z9nuueva.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' + '/' + token;
       const result = await axios.get(url);
       if (result.data) {
         var locations = extractLocations(result.data.events);
