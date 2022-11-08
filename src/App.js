@@ -5,13 +5,14 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
 import "./nprogress.css";
+import { mockData } from "./mock-data";
 
 
 
 
 class App extends Component {
   state = {
-    events: [],
+    events: [mockData],
     locations: [],
     numOfEvents: 20, 
       }
