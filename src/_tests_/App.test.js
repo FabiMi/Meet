@@ -100,13 +100,14 @@ describe('<App /> integration', () => {
     AppWrapper.unmount();
   });
 
-  test("render correct list of events", () => {
+  test("check if events match the content of the mock data", async () => {
     const AppWrapper = mount(<App />);
-    AppWrapper.setState({
-      events: mockEvents,
+    const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+    NumberOfEventsWrapper.find(".number-input").simulate("change", {
+      target: { value: 10 },
     });
-    expect(AppWrapper.find(".event")).toHaveLength(mockEvents.length);
+    await getEvents();
+    expect(AppWrapper.state("events")).toEqual(mockData.slice(0, 10));
     AppWrapper.unmount();
   });
-  
 });

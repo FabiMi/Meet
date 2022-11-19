@@ -12,7 +12,7 @@ import { mockData } from "./mock-data";
 
 class App extends Component {
   state = {
-    events: [mockData],
+    events: [],
     locations: [],
     numOfEvents: 20, 
       }
