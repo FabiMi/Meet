@@ -14,18 +14,24 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
-    numOfEvents: 32, 
+    numOfEvents: 32,
+    mockEvents: [getEvents]
+
+    
+
       }
 
-      updateEvents = (location, eventCount) => {
+      updateEvents = (location, ) => {
         getEvents().then((events) => {
           const locationEvents =
             location === "all"
               ? events
               : events.filter((event) => event.location === location);
           this.setState({
-            events: locationEvents.slice(0, this.state.numOfEvents),
+            events: locationEvents.slice(0, this.state.numOfEvents)
+
           });
+         
         });
       };
     
@@ -44,6 +50,7 @@ class App extends Component {
             });
           }
         });
+        
       }
   
     componentWillUnmount(){
@@ -61,6 +68,8 @@ class App extends Component {
             <NumberOfEvents
               num={this.state.numOfEvents}
               updateNumberOfEvents={(num) => this.updateNumberOfEvents(num)}
+              updateEvents={this.updateEvents}
+
             />
           </div>
           <EventList events={this.state.events} />
