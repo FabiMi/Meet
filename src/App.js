@@ -15,7 +15,7 @@ class App extends Component {
     events: [],
     locations: [],
     numOfEvents: 32,
-    mockEvents: [getEvents]
+    mockEvents: []
 
     
 
@@ -34,6 +34,7 @@ class App extends Component {
          
         });
       };
+      
     
       updateNumberOfEvents(number) {
         this.setState({
