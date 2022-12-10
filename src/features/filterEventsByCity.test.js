@@ -1,4 +1,9 @@
 import { loadFeature, defineFeature } from 'jest-cucumber';
+import React from 'react';
+import { mount, shallow } from 'enzyme';
+import CitySearch from '../CitySearch';
+import App from '../App';
+import { mockData } from '../mock-data';
 
 const feature = loadFeature('./src/features/filterEventsByCity.feature');
 
@@ -7,21 +12,24 @@ defineFeature(feature, test => {
       given('user hasn’t searched for any city', () => {
   
       });
-  
+
+      let AppWrapper;
       when('the user opens the app', () => {
-  
-      });
+        AppWrapper = mount(<App />);
+    });
   
       then(
         "the user should see the list of upcoming events from all locations.",
-        () => {}
+        () => {AppWrapper.update();
+      expect(AppWrapper.find('.event')).toHaveLength(mockData.length);}
       );
     });
   
     test('User should see a list of suggestions when they search for a city', ({ given, when, then }) => {
-      given('the main page is open', () => {
-  
-      });
+      let CitySearchWrapper;
+    given('the main page is open', () => {
+      CitySearchWrapper = shallow(<CitySearch updateEvents={() => {}} locations={locations} />);
+    });
   
       when('the user starts typing in the city textbox', () => {
   
