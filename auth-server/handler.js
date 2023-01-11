@@ -92,7 +92,7 @@ module.exports.getAccessToken = async (event) => {
           headers: { 
             "Access-Control-Allow-Headers": true,
             "Access-Control-Allow-Credentials": true,
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": true,
           },
           body: JSON.stringify(token),
         };
@@ -165,6 +165,7 @@ module.exports.getAccessToken = async (event) => {
             "Access-Control-Allow-Headers": true,
             "Access-Control-Allow-Credentials": true,
             "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "https://fabimi.github.io/",
           },
           body: JSON.stringify(error),
     
