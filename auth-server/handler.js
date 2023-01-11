@@ -45,13 +45,14 @@ module.exports.getAuthURL = async () => {
    *
    */
   const authUrl = oAuth2Client.generateAuthUrl({
-    access_type: "online",
+    access_type: "offline",
     scope: SCOPES,
   });
 
   return {
     statusCode: 200,
     headers: {
+      "Access-Control-Allow-Methods": GET, POST, PUT,
       "Access-Control-Allow-Headers": true,
       "Access-Control-Allow-Credentials": true,
       "Access-Control-Allow-Origin": "*",
@@ -90,6 +91,7 @@ module.exports.getAccessToken = async (event) => {
         return {
           statusCode: 200,
           headers: { 
+            "Access-Control-Allow-Methods": GET, POST, PUT,
             "Access-Control-Allow-Headers": true,
             "Access-Control-Allow-Credentials": true,
             "Access-Control-Allow-Origin": true,
@@ -103,6 +105,7 @@ module.exports.getAccessToken = async (event) => {
         return {
           statusCode: 500,
           headers: {
+            "Access-Control-Allow-Methods": GET, POST, PUT,
             "Access-Control-Allow-Headers": true,
             "Access-Control-Allow-Credentials": true,
             "Access-Control-Allow-Origin": "*",
@@ -149,6 +152,7 @@ module.exports.getAccessToken = async (event) => {
         return {
           statusCode: 200,
           headers: {
+            "Access-Control-Allow-Methods": GET, POST, PUT,
             "Access-Control-Allow-Headers": true,
             "Access-Control-Allow-Credentials": true,
             "Access-Control-Allow-Origin": "*",
@@ -162,6 +166,7 @@ module.exports.getAccessToken = async (event) => {
         return {
           statusCode: 500,
           headers: {
+            "Access-Control-Allow-Methods": GET, POST, PUT,
             "Access-Control-Allow-Headers": true,
             "Access-Control-Allow-Credentials": true,
             "Access-Control-Allow-Origin": "*",
