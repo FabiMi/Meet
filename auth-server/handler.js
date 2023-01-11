@@ -45,7 +45,7 @@ module.exports.getAuthURL = async () => {
    *
    */
   const authUrl = oAuth2Client.generateAuthUrl({
-    access_type: "offline",
+    access_type: "online",
     scope: SCOPES,
   });
 
