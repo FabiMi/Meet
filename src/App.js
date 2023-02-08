@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import './App.css';
-import EventList from './Eventlist';
+import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
@@ -17,41 +17,43 @@ class App extends Component {
     numOfEvents: 32,
     mockEvents: []
 
-    
-
+  
       }
-      updateEvents = (location, ) => {
+      updateEvents = (location, numOfEvents) => {
         getEvents().then((events) => {
           const locationEvents =
             location === "all"
               ? events
               : events.filter((event) => event.location === location);
           this.setState({
-            events: locationEvents.slice(0, this.state.numOfEvents)
-
+            events: locationEvents.slice(0, numOfEvents || this.state.numOfEvents),
           });
-         
         });
       };
       
+      
     
-      updateNumberOfEvents(number) {
+      updateNumberOfEvents = (value) => {
         this.setState({
-          numOfEvents: number,
+          numOfEvents: value
         });
-      }
+      };
       componentDidMount() {
         this.mounted = true;
-        getEvents().then((events) => {
-          if (this.mounted) {
-            this.setState({
-              events: events.slice(0, this.state.numOfEvents),
-              locations: extractLocations(events),
-            });
-          }
-        });
-        
-      }
+        getEvents()
+  .then((events) => {
+    if (this.mounted) {
+      this.setState({
+        events: events.slice(0, this.state.numOfEvents),
+        locations: extractLocations(events),
+      });
+    }
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+}
+
   
     componentWillUnmount(){
       this.mounted = false;

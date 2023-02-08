@@ -28,12 +28,13 @@ defineFeature(feature, test => {
     test('User should see a list of suggestions when they search for a city', ({ given, when, then }) => {
       let CitySearchWrapper;
     given('the main page is open', () => {
-      CitySearchWrapper = shallow(<CitySearch updateEvents={() => {}} locations={locations} />);
+      CitySearchWrapper = shallow(<CitySearch updateEvents={() => {}} locations={location} />);
     });
   
-    when('user starts typing in the city textbox', () => {
-      CitySearchWrapper.find('.city').simulate('change', { target: { value: 'Berlin' } });
+    when('the user starts typing in the city textbox', () => {
+      CitySearchWrapper.find('input').simulate('change', { target: { value: 'city' } });
     });
+    
   
     then('the user should receive a list of cities (suggestions) that match what they’ve typed', () => {
       expect(CitySearchWrapper.find('.suggestions li')).toHaveLength(2);

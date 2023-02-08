@@ -52,7 +52,7 @@ module.exports.getAuthURL = async () => {
   return {
     statusCode: 200,
     headers: {
-      "Access-Control-Allow-Methods": GET, POST, PUT,
+      "Access-Control-Allow-Methods":POST, PUT,
       "Access-Control-Allow-Headers": true,
       "Access-Control-Allow-Credentials": true,
       "Access-Control-Allow-Origin": "*",
@@ -91,10 +91,10 @@ module.exports.getAccessToken = async (event) => {
         return {
           statusCode: 200,
           headers: { 
-            "Access-Control-Allow-Methods": GET, POST, PUT,
+            "Access-Control-Allow-Methods": "GET, POST, PUT",
             "Access-Control-Allow-Headers": true,
             "Access-Control-Allow-Credentials": true,
-            "Access-Control-Allow-Origin": true,
+            "Access-Control-Allow-Origin": "*",
           },
           body: JSON.stringify(token),
         };
