@@ -57,10 +57,8 @@ module.exports.getAuthURL = async () => {
   return {
     statusCode: 200,
     headers: {
-      "Access-Control-Allow-Methods":POST, PUT,
-      "Access-Control-Allow-Headers": true,
-      "Access-Control-Allow-Credentials": true,
-      "Access-Control-Allow-Origin": "*",
+    
+      "Access-Control-Allow-Origin": "*"
     },
     body: JSON.stringify({
       authUrl: authUrl,
@@ -106,10 +104,6 @@ module.exports.getAccessToken = async (event) => {
         console.error(err);
         return {
           statusCode: 500,
-          headers: {
-
-            "Access-Control-Allow-Origin": "*",
-          },
           body: JSON.stringify(err),
         };
       });
@@ -152,7 +146,6 @@ module.exports.getAccessToken = async (event) => {
         return {
           statusCode: 200,
           headers: {
-
             "Access-Control-Allow-Origin": "*",
           },
           body: JSON.stringify({ events: results.data.items }),
@@ -165,8 +158,7 @@ module.exports.getAccessToken = async (event) => {
           statusCode: 500,
           headers: {
 
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Origin": "https://fabimi.github.io/",
+            "Access-Control-Allow-Origin": "*"
           },
           body: JSON.stringify(error),
     
