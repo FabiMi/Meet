@@ -1,6 +1,11 @@
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const calendar = google.calendar("v3");
+const express = require('express');
+const cors = require('cors');
+const app = express();
+
+app.use(cors());
 /**
  * SCOPES allows you to set access levels; this is set to readonly for now because you don't have access rights to
  * update the calendar yourself. For more info, check out the SCOPES documentation at this link: https://developers.google.com/identity/protocols/oauth2/scopes
@@ -91,10 +96,7 @@ module.exports.getAccessToken = async (event) => {
         return {
           statusCode: 200,
           headers: { 
-            "Access-Control-Allow-Methods": "GET, POST, PUT",
-            "Access-Control-Allow-Headers": true,
-            "Access-Control-Allow-Credentials": true,
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "*"
           },
           body: JSON.stringify(token),
         };
@@ -105,9 +107,7 @@ module.exports.getAccessToken = async (event) => {
         return {
           statusCode: 500,
           headers: {
-            "Access-Control-Allow-Methods": GET, POST, PUT,
-            "Access-Control-Allow-Headers": true,
-            "Access-Control-Allow-Credentials": true,
+
             "Access-Control-Allow-Origin": "*",
           },
           body: JSON.stringify(err),
@@ -152,9 +152,7 @@ module.exports.getAccessToken = async (event) => {
         return {
           statusCode: 200,
           headers: {
-            "Access-Control-Allow-Methods": GET, POST, PUT,
-            "Access-Control-Allow-Headers": true,
-            "Access-Control-Allow-Credentials": true,
+
             "Access-Control-Allow-Origin": "*",
           },
           body: JSON.stringify({ events: results.data.items }),
@@ -166,9 +164,7 @@ module.exports.getAccessToken = async (event) => {
         return {
           statusCode: 500,
           headers: {
-            "Access-Control-Allow-Methods": GET, POST, PUT,
-            "Access-Control-Allow-Headers": true,
-            "Access-Control-Allow-Credentials": true,
+
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Origin": "https://fabimi.github.io/",
           },
