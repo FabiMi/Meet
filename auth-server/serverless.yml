@@ -16,6 +16,12 @@ cors:
   getAuthURL:
     handler: handler.getAuthURL
     events:
+    origins:
+    - '*'
+  headers:
+    - Content-Type
+    - Authorization
+  allowCredentials: false
       - http:
           path: api/get-auth-url
           method: get
