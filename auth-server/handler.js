@@ -119,7 +119,12 @@ module.exports.getAccessToken = async (event) => {
       // Decode authorization code extracted from the URL query
       const access_token = decodeURIComponent(`${event.pathParameters.code}`);
       oAuth2Client.setCredentials({ access_token });
-    
+      const response = {
+        statusCode: 200,
+        headers: {
+            'Access-Control-Allow-Origin': 'https://fabimi.github.io',
+            'Access-Control-Allow-Credentials': true
+        }}
       return new Promise( (resolve, reject) => {
 
         calendar.events.list(

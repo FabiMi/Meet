@@ -12,12 +12,7 @@ provider:
     CALENDAR_ID: ${file(config.json):CALENDAR_ID}
 functions:
 cors:
-  origins:
-    - '*'
-  headers:
-    - Content-Type
-    - Authorization
-  allowCredentials: false
+
   getAuthURL:
     handler: handler.getAuthURL
     events:
@@ -27,12 +22,31 @@ cors:
   getAccessToken:
     handler: handler.getAccessToken
     events:
+      origins:
+    - '*'
+  headers:
+    - Content-Type
+    - Authorization
+  allowCredentials: false
+     origins:
+    - '*'
+  headers:
+    - Content-Type
+    - Authorization
+  allowCredentials: false
       - http:
           path: api/token/{code}
           method: get
   getCalendarEvents:
     handler: handler.getCalendarEvents
     events:
+     origins:
+    - '*'
+  headers:
+    - Content-Type
+    - Authorization
+  allowCredentials: false
+
       - http:
           path: api/get-events/{access_token}
           method: get
