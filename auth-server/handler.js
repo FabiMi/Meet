@@ -1,6 +1,11 @@
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const calendar = google.calendar("v3");
+const express = require('express');
+const cors = require('cors');
+const app = express();
+
+app.use(cors());
 /**
  * SCOPES allows you to set access levels; this is set to readonly for now because you don't have access rights to
  * update the calendar yourself. For more info, check out the SCOPES documentation at this link: https://developers.google.com/identity/protocols/oauth2/scopes
@@ -20,7 +25,7 @@ const credentials = {
   token_uri: "https://oauth2.googleapis.com/token",
   auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
   redirect_uris: ["https://fabimi.github.io/meet/"],
-  javascript_origins: ["https://fabimi.github.io", "http://localhost:3000"],
+  javascript_origins: ["http://localhost:3000"],
 };
 const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
 const oAuth2Client = new google.auth.OAuth2(
@@ -52,7 +57,8 @@ module.exports.getAuthURL = async () => {
   return {
     statusCode: 200,
     headers: {
-      "Access-Control-Allow-Origin": "*",
+    
+      "Access-Control-Allow-Origin": "*"
     },
     body: JSON.stringify({
       authUrl: authUrl,
@@ -87,8 +93,8 @@ module.exports.getAccessToken = async (event) => {
         // Respond with OAuth token 
         return {
           statusCode: 200,
-          headers: {
-            "Access-Control-Allow-Origin": "*",
+          headers: { 
+            "Access-Control-Allow-Origin": "*"
           },
           body: JSON.stringify(token),
         };
@@ -113,7 +119,12 @@ module.exports.getAccessToken = async (event) => {
       // Decode authorization code extracted from the URL query
       const access_token = decodeURIComponent(`${event.pathParameters.code}`);
       oAuth2Client.setCredentials({ access_token });
-    
+      const response = {
+        statusCode: 200,
+        headers: {
+            'Access-Control-Allow-Origin': 'https://fabimi.github.io',
+            'Access-Control-Allow-Credentials': true
+        }}
       return new Promise( (resolve, reject) => {
 
         calendar.events.list(
@@ -151,7 +162,8 @@ module.exports.getAccessToken = async (event) => {
         return {
           statusCode: 500,
           headers: {
-            "Access-Control-Allow-Origin": "*",
+
+            "Access-Control-Allow-Origin": "*"
           },
           body: JSON.stringify(error),
     
