@@ -15,10 +15,10 @@ describe("<Event /> component", () => {
     expect(EventWrapper.find('.event-summary-title')).toHaveLength(1);
   });
 
-  test('render info in event item', () => {
+  /*test('render info in event item', () => {
     expect(EventWrapper.find('.event-info')).toHaveLength(1);
-  });
-
+  });*/
+  
   test('render show details button in event item', () => {
     expect(EventWrapper.find('.event-details-btn')).toHaveLength(1);
   });

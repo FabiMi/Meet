@@ -4,16 +4,19 @@ import { InfoAlert } from './Alert';
 class CitySearch extends Component {
   state = {
     query: '',
-    suggestions: [],
+    suggestions: [2],
     showSuggestions: undefined
   }
 
   handleInputChanged = (event) => {
     const value = event.target.value;
-    const suggestions = this.props.locations.filter((location) => {
-      return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
-    });
-    if (suggestions.length === 0) {
+    let suggestions = [];
+    if (Array.isArray(this.props.locations)) {
+      suggestions = this.props.locations.filter((location) => {
+        return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
+      });
+    }
+    if (suggestions.length === 1) {
       this.setState({
         query: value,
         infoText: 'We can not find the city you are looking for. Please try another city',
@@ -26,7 +29,6 @@ class CitySearch extends Component {
       });
     }
   };
-
   handleItemClicked = (suggestion) => {
     this.setState({
       query: suggestion,

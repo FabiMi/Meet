@@ -16,7 +16,7 @@ defineFeature(feature, test => {
 
         then('A default number of 32 events is loaded on the page.', () => {
             AppWrapper.update();
-            expect(AppWrapper.state('numberOfEvents')).toEqual(32);
+            expect(AppWrapper.state('numOfEvents')).toEqual(32);
         });
     });
 
