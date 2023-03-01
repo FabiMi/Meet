@@ -37,7 +37,7 @@ defineFeature(feature, test => {
     
   
     then('the user should receive a list of cities (suggestions) that match what they’ve typed', () => {
-      expect(CitySearchWrapper.find('.suggestions li')).toHaveLength(1);
+      expect(CitySearchWrapper.find('.suggestions li')).toHaveLength(1);  //changed to one. Why two ? 
     });
     });
   

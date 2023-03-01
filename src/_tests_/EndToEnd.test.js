@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer';
-
+import { mockData } from "../mock-data";
 
 
 describe('show/hide an event details', () => {
@@ -16,9 +16,9 @@ describe('show/hide an event details', () => {
     await page.goto('http://localhost:3000/');
     await page.waitForSelector('.event');
   });
-
   afterAll(() => {
     browser.close();
+ 
   });
     test('An event element is collapsed by default', async () => {
       jest.setTimeout(1000000);
@@ -48,5 +48,5 @@ describe('show/hide an event details', () => {
         expect(eventDetails).toBeNull();
       });
 
-
+     
 });
