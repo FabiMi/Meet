@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 
 class Event extends Component {
-  state = { collapsed: true };
+  state = { show: false };
 
   toggleEventDetails = () => {
-    this.setState((prevState) => ({
-      collapsed: !prevState.collapsed,
-  }));
-}
+    this.setState({ show: !this.state.show });
+  };
 
   render() {
     const { event } = this.props;
