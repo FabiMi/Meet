@@ -6,7 +6,6 @@ import NProgress from 'nprogress';
 
 
 
-
 /**
  *
  * @param {*} events

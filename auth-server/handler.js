@@ -1,9 +1,6 @@
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const calendar = google.calendar("v3");
-
-
-app.use(cors());
 /**
  * SCOPES allows you to set access levels; this is set to readonly for now because you don't have access rights to
  * update the calendar yourself. For more info, check out the SCOPES documentation at this link: https://developers.google.com/identity/protocols/oauth2/scopes
@@ -32,7 +29,7 @@ const oAuth2Client = new google.auth.OAuth2(
   redirect_uris[0]
 );
 
-/ STEP ONE //////////
+// STEP ONE //////////
 // The first step in the OAuth process is to generate a URL so users can log in with
 // Google and be authorized to see your calendar. After logging in, they’ll receive a code
 // as a URL parameter.
@@ -112,7 +109,6 @@ module.exports.getCalendarEvents = async event => {
   oAuth2Client.setCredentials({ access_token });
 
   return new Promise((resolve, reject) => {
-    
     calendar.events.list(
       {
         calendarId: calendar_id,
