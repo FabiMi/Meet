@@ -26,9 +26,9 @@ import NProgress from 'nprogress';
   return locations;
 };
 
-export const checkToken = async (accessToken) => {
+export const checkToken = async (access_token) => {
   const result = await fetch(
-    `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
+    `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${access_token}`
   )
     .then((res) => res.json())
     .catch((error) => error.json());
@@ -63,7 +63,6 @@ export const getEvents = async () => {
     NProgress.done();
     return data ? JSON.parse(data).events : [];
   }
-
   const access_token = await getAccessToken();
 
   if (access_token) {
@@ -84,8 +83,7 @@ export const getEvents = async () => {
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
-    'https://v9z9nuueva.execute-api.eu-central-1.amazonaws.com/dev/api/token' +
-      '/' +
+    'https://v9z9nuueva.execute-api.eu-central-1.amazonaws.com/dev/api/token/' + 
       encodeCode
   )
     .then((res) => {
