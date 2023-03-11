@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 .App {
   text-align: center;
-  padding: 2% 5%;
+  padding: 4% 5%;
 }
 
 .App * {
@@ -85,9 +85,7 @@ input[type="number"] {
   position: relative;
 }
 
-/*.event-info {
-  display: none;
-}*/
+
 
 .details-btn {
   position: absolute;
@@ -134,7 +132,8 @@ input[type="number"] {
 
 .Alert {
   position: fixed;
-  top: 20px;
+  top: 5px;
+  left: 10%;
 }
 
 .data-vis-wrapper {

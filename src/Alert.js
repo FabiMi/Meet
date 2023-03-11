@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//import "./alert.css"
 
 class Alert extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class Alert extends Component {
   getStyle = () => {
     return {
       color: this.color,
+
     };
   };
 
