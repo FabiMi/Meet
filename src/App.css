@@ -38,6 +38,8 @@ input[type="number"] {
 
 .city {
   width: 250px;
+  background-color: #dae9e9;
+
 }
 
 .CitySearch {
@@ -47,6 +49,7 @@ input[type="number"] {
   max-width: 300px;
   margin: auto;
   position: relative;
+
 }
 
 .suggestions {
@@ -87,7 +90,7 @@ input[type="number"] {
 
 
 
-.details-btn {
+.event-details-btn {
   position: absolute;
   right: 5px;
   bottom: 5px;
@@ -116,7 +119,7 @@ input[type="number"] {
   overflow-x: hidden;
 }
 
-.numberOfEvents {
+.number-of-events {
   width: 200px;
   margin: 20px auto;
   text-align: center;
@@ -131,9 +134,10 @@ input[type="number"] {
 }
 
 .Alert {
-  position: fixed;
+  position: relative;
+  margin-left: auto;
   top: 5px;
-  left: 10%;
+
 }
 
 .data-vis-wrapper {
