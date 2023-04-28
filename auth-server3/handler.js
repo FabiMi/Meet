@@ -147,6 +147,7 @@ module.exports.getAccessToken = async (event) => {
           statusCode: 200,
           headers: {
             "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "https://fabimi.github.io/meet/",
             "Access-Control-Allow-Credentials": true
 
 
@@ -161,6 +162,7 @@ module.exports.getAccessToken = async (event) => {
           statusCode: 500,
           headers: {
             "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "https://fabimi.github.io/meet/",
             "Access-Control-Allow-Credentials": true
           },
           body: JSON.stringify(error),

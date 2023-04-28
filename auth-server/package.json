@@ -1,5 +1,5 @@
 {
-  "name": "auth-server",
+  "name": "auth-server2",
   "version": "1.0.0",
   "description": "",
   "main": "handler.js",
@@ -19,5 +19,5 @@
   "devDependencies": {
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
     "enzyme": "^3.11.0"
-  }}
-   
+  }
+}

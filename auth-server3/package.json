@@ -1,0 +1,22 @@
+{
+  "name": "auth-server",
+  "version": "1.0.0",
+  "description": "Meet",
+  "main": "handler.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FabiMi/meet.git"
+  },
+  "keywords": [
+    "meet"
+  ],
+  "author": "fabian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FabiMi/meet/issues"
+  },
+  "homepage": "https://github.com/FabiMi/meet#readme"
+}

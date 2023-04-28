@@ -1,4 +1,4 @@
-service: auth-server2
+service: auth-server
 
 provider:
   name: aws
@@ -11,14 +11,13 @@ provider:
     CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}
     PROJECT_ID: ${file(config.json):PROJECT_ID}
     CALENDAR_ID: ${file(config.json):CALENDAR_ID}
-functions:
+functions:r
   getAuthURL:
     handler: handler.getAuthURL
     events:
       - http:
           path: api/get-auth-url
           method: get
-          cors: true
   getAccessToken:
     handler: handler.getAccessToken
     events:
