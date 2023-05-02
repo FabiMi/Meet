@@ -117,7 +117,7 @@ module.exports.getAccessToken = async (event) => {
         redirect_uris[0]
       );
       // Decode authorization code extracted from the URL query
-      const access_token = decodeURIComponent(`${event.pathParameters.code}`);
+      const access_token = decodeURIComponent(`${event.pathParameters.access_token}`);
       oAuth2Client.setCredentials({ access_token });
     
       return new Promise( (resolve, reject) => {
@@ -126,7 +126,7 @@ module.exports.getAccessToken = async (event) => {
           {
             calendarId: calendar_id,
             auth: oAuth2Client,
-            timeMin: new Date().toISOString(),
+            timeMin: new Date().toISOString(),                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
             singleEvents: true,
             orderBy: "startTime",
           },
@@ -163,7 +163,7 @@ module.exports.getAccessToken = async (event) => {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Credentials": true
           },
-          body: JSON.stringify(error),
+          body: JSON.stringify(err),
     
         
     }}
