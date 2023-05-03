@@ -24,3 +24,5 @@ yarn-error.log*
 
 .auth-server2
 .auth-server3
+package-lock.json
+package.json
