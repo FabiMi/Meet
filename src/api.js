@@ -58,7 +58,7 @@ const extractLocations = (events) => {
     const code = await searchParams.get("code");
     if (!code) {
       const results = await axios.get(
-        "https://cu8ic3u2b9.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url"
+        'https://cu8ic3u2b9.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url'
       );
       const { authUrl } = results.data;
       return (window.location.href = authUrl);
@@ -106,7 +106,7 @@ const getToken = async (code) => {
   try {
       const encodeCode = encodeURIComponent(code);
 
-      const response = await fetch(`https://cu8ic3u2b9.execute-api.eu-central-1.amazonaws.com/dev/api/token/${code}`);
+      const response = await fetch(`https://cu8ic3u2b9.execute-api.eu-central-1.amazonaws.com/dev/api/token/${encodeCode}`);
       if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
       }
