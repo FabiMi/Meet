@@ -31,7 +31,7 @@ class NumberOfEvents extends Component {
             type="number"
             className="number-input"
             min={0}
-            value={this.state.numOfEvents}
+            value={this.state.numOfEvents || 32}
             onChange={this.handleInputChanged}
           />
         </label>
