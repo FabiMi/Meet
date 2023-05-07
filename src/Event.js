@@ -19,7 +19,7 @@ class Event extends Component {
       {this.state.show && (
         <div>
           <p className="event-info">
-            {event.summary} {event.location} {event.dateTime}
+            {event.summary} {event.location} {event.start.dateTime}
           </p>
           </div>
         )}
