@@ -133,11 +133,11 @@ input[type="number"] {
   font-family: sans-serif;
 }
 
-.Alert {
+ .Alert {
   position: relative;
   margin-left: auto;
-  top: 5px;
-
+  font-size: 10px;
+  margin-top: 1px;
 }
 
 .data-vis-wrapper {
