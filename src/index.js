@@ -12,7 +12,6 @@ atatus.config('ecd0571dc4644fb398bbc8f26fe9e390').install();
 
 ReactDOM.render(
   <React.StrictMode>
-    <h1>Meet App</h1>
   <App />
 </React.StrictMode>,
 document.getElementById("root")
