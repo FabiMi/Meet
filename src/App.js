@@ -18,7 +18,8 @@ class App extends Component {
     locations: [],
     numOfEvents: 32,
     mockEvents: [],
-    showWelcomeScreen: undefined
+    showWelcomeScreen: undefined,
+    offlineText: ""
   }
 
   updateEvents = (location, eventCount) => {
@@ -83,18 +84,22 @@ className="App" />
     return (
       <div className="App">
         <OfflineAlert text={this.state.offlineText} />
+        <h1>Meet App</h1>
+        <h2>Search for your nearest city </h2>
         <div className="filters">
           <CitySearch
             locations={this.state.locations}
             updateEvents={this.updateEvents}
           />
+
+          <h3>Number of events:</h3>
           <NumberOfEvents
             numOfEvents={this.state.numOfEvents}
             updateEvents={this.updateEvents}
           />
         </div>
 
-        
+        <h4>Events in each City</h4>:
        {/*  <h4>Events in each city</h4>
 
          <ScatterChart
