@@ -48,32 +48,7 @@ class App extends Component {
     });
   };
 
-  async componentDidMount() {
-    this.mounted = true;
-    const accessToken = localStorage.getItem("access_token");
-    const isTokenValid =
-      !window.location.href.startsWith("http://localhost") &&
-        !(accessToken && !navigator.onLine) &&
-        (await checkToken(accessToken)).error
-        ? false
-        : true;
-    const searchParams = new URLSearchParams(window.location.search);
-    const code = searchParams.get("code");
-    const byPassWelcomeScreen = code || isTokenValid;
-
-    this.setState({ showWelcomeScreen: !byPassWelcomeScreen });
-
-    if (byPassWelcomeScreen) {
-      getEvents().then((events) => {
-        if (this.mounted) {
-          this.setState({
-            events: events.slice(0, 32),
-            locations: extractLocations(events),
-          });
-        }
-      });
-    }
-  }
+ 
   
   promptOfflineWarning = () => {
     if (!navigator.onLine) {
