@@ -2,6 +2,16 @@ Meet
 
 Meet is a web application that enables users to connect and interact with others in real-time. It is built using React, Express, and other powerful libraries to provide a smooth and engaging experience.
 
+The Meet app is a web application developed using React and Serverless Deployment. It provides users with access to a Google Calendar feature, allowing them to search for events in their city. The app was built using test-driven development techniques to ensure reliability and meet user needs. Additionally, secure authentication is implemented using AWS Lambda and Google Auth, providing a seamless and trusted sign-in experience.
+
+
+Features
+
+Secure authentication using AWS Lambda and Google Auth.
+Access to Google Calendar events for users' cities.
+Test-driven development approach for reliable code.
+
+
 Installation
 
 To get started with Meet, follow these steps:
