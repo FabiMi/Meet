@@ -23,6 +23,12 @@ class Alert extends Component {
   }
 }
 
+/**
+ * @description Alert component for displaying info messages
+ * @extends Alert
+ */
+
+
 class InfoAlert extends Alert {
   constructor(props) {
     super(props);

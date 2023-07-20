@@ -7,6 +7,14 @@ class NumberOfEvents extends Component {
     numOfEvents: this.props.numOfEvents,
   };
 
+
+
+  /**
+   * @description handleInputChanged function handles the input change event. It will update the numOfEvents state and errorText state. It will also call the updateEvents function to update the events list.
+   * @param {*} event 
+   * @returns  {string} value
+   * @returns {string} errorText
+   */
   handleInputChanged = (event) => {
     let numOfEvents = event.target.value;
     const errorText =
