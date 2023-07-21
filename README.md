@@ -1,25 +1,16 @@
-Meet
+Meet App
+
+## Description
 
 Meet is a web application that enables users to connect and interact with others in real-time. It is built using React, Express, and other powerful libraries to provide a smooth and engaging experience.
 
-The Meet app is a web application developed using React and Serverless Deployment. It provides users with access to a Google Calendar feature, allowing them to search for events in their city. The app was built using test-driven development techniques to ensure reliability and meet user needs. Additionally, secure authentication is implemented using AWS Lambda and Google Auth, providing a seamless and trusted sign-in experience.
+[![Watch the video](https://img.youtube.com/vi/nTQUwghvy5Q/default.jpg)](https://youtu.be/lShUR-1ehLg)
 
+![](Screenshots/Screenshot 2023-07-21 at 16.31.14.png)
+![](Screenshots/Screenshot 2023-07-21 at 16.31.27.png)
+Showcase image2
 
-
-
-
-
-
-Features
-
-Secure authentication using AWS Lambda and Google Auth.
-Access to Google Calendar events for users' cities.
-Test-driven development approach for reliable code.
-
-
-Installation
-
-To get started with Meet, follow these steps:
+## How to run locally
 
 Clone the repository from GitHub:
 bash
@@ -30,63 +21,19 @@ bash
 Copy code
 cd meet
 Install the required dependencies using npm:
-bash
 Copy code
 npm install
-Usage
 
-To start the development server and run the application, use the following command:
+## Technologies used:
+HTML
+CSS
+React
+Express
+AWS Lambda
+Google Auth
+Serverless Deployment
 
-bash
-Copy code
-npm start
-The application will be available at http://localhost:3000 in your web browser.
-
-Scripts
-
-npm start: Starts the development server using React Scripts.
-npm run build: Builds the production-ready application bundle.
-npm test: Executes tests for the application.
-npm run eject: Ejects the create-react-app configuration, providing more control over the project's setup.
-npm run predeploy: Builds the application before deployment.
-npm run deploy: Deploys the application to GitHub Pages.
-Dependencies
-
-The application uses the following main dependencies:
-
-@testing-library/jest-dom: "^5.16.2"
-@testing-library/react: "^11.2.7"
-@testing-library/user-event: "^12.8.3"
-atatus-spa: "^4.5.0"
-axios: "^1.3.4"
-cors: "^2.8.5"
-express: "^4.18.2"
-jest: "^27.5.1"
-nprogress: "^0.2.0"
-react: "^17.0.2"
-react-dom: "^17.0.2"
-react-scripts: "5.0.1"
-recharts: "^2.5.0"
-web-vitals: "^2.1.4"
-Dev Dependencies
-
-@babel/preset-typescript: "^7.18.6"
-@types/jest: "^29.4.0"
-@wojtekmaj/enzyme-adapter-react-17: "^0.6.7"
-enzyme: "^3.11.0"
-gh-pages: "^4.0.0"
-jest-cucumber: "^3.0.1"
-puppeteer: "^17.1.3"
-Testing
-
-Meet includes testing configurations and tools like Jest and Enzyme to ensure reliable and well-tested code.
-
-License
-
-This project is marked as "private," and its license details are not provided in the package.json file.
-
-Contact
-
-For any questions or support related to Meet, please contact the author, Fabian, via email at devfabmi@email.com.
-
-Thank you for using Meet! Enjoy connecting with others!
+## Features
+Secure authentication using AWS Lambda and Google Auth.
+Access to Google Calendar events for users' cities.
+Test-driven development approach for reliable code.
