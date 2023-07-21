@@ -6,7 +6,7 @@ Meet is a web application that enables users to connect and interact with others
 
 [![Watch the video](https://img.youtube.com/vi/nTQUwghvy5Q/default.jpg)](https://youtu.be/lShUR-1ehLg)
 
-![](https://github.com/FabiMi/meet/blob/Task_4.10/Screenshots/Screenshot%202023-07-21%20at%2016.31.14.png1)
+![](https://github.com/FabiMi/meet/blob/Task_4.10/Screenshots/Screenshot%202023-07-21%20at%2016.31.14.png)
 
 ![](https://github.com/FabiMi/meet/blob/Task_4.10/Screenshots/Screenshot%202023-07-21%20at%2016.31.27.png)
 
